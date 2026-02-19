@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- DataLayer init BEFORE GTM -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KP36HMH5');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Growth Portfolio – Saron Berhane</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- GTM noscript -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP36HMH5"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <!-- HERO -->
+  <section class="hero" data-analytics-section="hero">
+    <div class="hero-left">
+      <h1 class="name">Saron<br><span class="name-second">Berhane</span></h1>
+      <p class="kicker">GROWTH MARKETING PORTFOLIO</p>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-card">
+        <img class="hero-photo" src="assets/saron-portrait-desktop.jpg?v=1" alt="Portrait of Saron Berhane">
+        <div class="photo-meta">
+          <div class="rule"></div>
+          <p>
+            Currently studying Growth Marketing at<br>
+            Berghs School Of Communication
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CASE -->
+  <section class="product-case" data-analytics-section="product_case">
+    <div class="product-case__intro">
+      <h2>Product Case Study</h2>
+      <p>From user insight to real-time implementation using live API data.</p>
+    </div>
+
+    <div class="product-case__line"></div>
+
+    <div class="product-case__content">
+      <article class="product-case__card">
+        <h3>Real-Time Alerts for Your Bus or Train Ride</h3>
+        <p>
+          Many commuters miss their stop not because data is missing, but because attention is.
+        </p>
+        <p>
+          This app uses live public transport data to send you a real-time alert one station before arrival.
+        </p>
+        <p>
+          Simply enter your trip, select your departure, and activate the reminder. The app handles the rest.
+        </p>
+        <div class="lead-magnet__separator"></div>
+        <div class="lead-magnet">
+          <h4>Launch Offer</h4>
+          <p class="lead-magnet__offer">Try the app for free - up to 10 rides.</p>
+          <p class="lead-magnet__price">Regular price: 49 SEK.</p>
+          <p class="lead-magnet__hint">Enter your email and i will send you the app link.</p>
+          <form class="lead-magnet__form">
+            <label class="sr-only" for="lead-email">Email address</label>
+            <input id="lead-email" name="email" type="email" placeholder="your@email.com" required>
+            <button
+              type="submit"
+              data-analytics-event="lead_magnet_submit_click"
+              data-analytics-label="product_case_lead_magnet"
+            >
+              Get Access
+            </button>
+          </form>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="lead-popup" id="lead-popup" aria-hidden="true">
+    <div class="lead-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-popup-title">
+      <h5 id="lead-popup-title">Thanks!</h5>
+      <p>You will now receive instructions and a link by email.</p>
+      <button type="button" class="lead-popup__close">Close</button>
+    </div>
+  </div>
+
+  <!-- CASES -->
+  <section class="cases" data-analytics-section="cases">
+
+    <div class="marquee">
+      <div class="marquee__track">
+        <div class="marquee__content">
+          <span>Growth Cases</span>
+          <span>Growth Cases</span>
+          <span>Growth Cases</span>
+          <span>Growth Cases</span>
+        </div>
+        <div class="marquee__content">
+          <span>Growth Cases</span>
+          <span>Growth Cases</span>
+          <span>Growth Cases</span>
+          <span>Growth Cases</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cases-line"></div>
+
+    <div class="case-grid">
+      <div class="case-card" data-analytics-event="portfolio_case_click" data-analytics-label="case_1"></div>
+      <div class="case-card" data-analytics-event="portfolio_case_click" data-analytics-label="case_2"></div>
+      <div class="case-card" data-analytics-event="portfolio_case_click" data-analytics-label="case_3"></div>
+      <div class="case-card" data-analytics-event="portfolio_case_click" data-analytics-label="case_4"></div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" data-analytics-section="about">
+
+    <div class="about-left">
+      <h2>About Me</h2>
+      <p>
+        I'm a growth marketer driven by curiosity and long-term impact.
+        Focused on experimentation, psychology, and scalable systems.
+      </p>
+    </div>
+
+    <div class="about-right">
+      <div class="placeholder large"></div>
+    </div>
+
+  </section>
+
+  <footer>
+    © <span id="year"></span> Saron Berhane
+  </footer>
+
+  <script src="js/index.js"></script>
+
+</body>
+</html>
