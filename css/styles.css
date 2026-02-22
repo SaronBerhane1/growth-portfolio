@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --page-max: 1440px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
 body {
   background: #9FAEC0;
   font-family: 'Montserrat', sans-serif;
@@ -17,8 +27,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 48px;
-  padding: 80px 80px;
+  gap: var(--space-5);
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 80px) clamp(20px, 5vw, 80px);
 }
 
 .hero-left {
@@ -30,7 +42,7 @@ body {
 
 .name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 96px;
+  font-size: clamp(44px, 8vw, 96px);
   font-weight: 300;
   line-height: 1;
 }
@@ -40,9 +52,9 @@ body {
 }
 
 .kicker {
-  margin-top: 20px;
-  letter-spacing: 4px;
-  font-size: 14px;
+  margin-top: var(--space-2);
+  letter-spacing: clamp(1.5px, 0.35vw, 4px);
+  font-size: clamp(11px, 1.2vw, 14px);
 }
 
 .hero-right {
@@ -51,7 +63,7 @@ body {
 
 .photo-card {
   background: #5A332B;
-  padding: 40px;
+  padding: clamp(18px, 3vw, 40px);
 }
 
 .placeholder {
@@ -62,7 +74,7 @@ body {
 
 .hero-photo {
   width: 100%;
-  height: 400px;
+  height: clamp(260px, 32vw, 400px);
   object-fit: contain;
   object-position: center;
   filter: grayscale(100%);
@@ -70,7 +82,7 @@ body {
 }
 
 .placeholder.large {
-  height: 500px;
+  height: clamp(320px, 36vw, 500px);
   background: #5A332B;
 }
 
@@ -89,7 +101,7 @@ body {
 
 .product-case {
   background: #5A332B;
-  padding: 48px 30px 56px;
+  padding: clamp(36px, 4vw, 48px) clamp(16px, 3vw, 30px) clamp(40px, 5vw, 56px);
 }
 
 .product-case__intro {
@@ -98,16 +110,16 @@ body {
 
 .product-case__intro h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 96px;
+  font-size: clamp(42px, 7vw, 96px);
   font-weight: 400;
   line-height: 0.95;
 }
 
 .product-case__intro p {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 44px;
+  font-size: clamp(18px, 3.3vw, 44px);
   line-height: 1.1;
-  margin-top: 8px;
+  margin-top: var(--space-1);
 }
 
 .product-case__line {
@@ -120,8 +132,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 56px;
-  max-width: 1400px;
+  gap: clamp(24px, 4vw, 56px);
+  max-width: var(--page-max);
   margin: 0 auto;
   padding: 0 8px;
 }
@@ -130,7 +142,7 @@ body {
   background: #9FAEC0;
   color: #F4EED9;
   width: min(640px, 100%);
-  padding: 28px 24px 22px;
+  padding: clamp(18px, 2.4vw, 28px) clamp(16px, 2vw, 24px) clamp(16px, 2vw, 22px);
 }
 
 .product-case__visual {
@@ -159,7 +171,7 @@ body {
 
 .product-case__card h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: clamp(22px, 2.4vw, 32px);
   line-height: 1.08;
   margin-bottom: 18px;
   font-weight: 400;
@@ -168,7 +180,7 @@ body {
 }
 
 .product-case__card p {
-  font-size: 16px;
+  font-size: clamp(14px, 1.15vw, 16px);
   line-height: 1.45;
   margin-bottom: 16px;
   color: #F4EED9;
@@ -190,7 +202,7 @@ body {
 
 .lead-magnet h4 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 21px;
+  font-size: clamp(18px, 1.5vw, 21px);
   line-height: 1;
   margin-bottom: 16px;
   text-transform: uppercase;
@@ -199,13 +211,13 @@ body {
 }
 
 .lead-magnet p {
-  font-size: 15px;
+  font-size: clamp(14px, 1vw, 15px);
   margin-bottom: 8px;
   color: #F4EED9;
 }
 
 .lead-magnet__offer {
-  font-size: 24px;
+  font-size: clamp(18px, 1.8vw, 24px);
   line-height: 1.2;
 }
 
@@ -233,7 +245,7 @@ body {
   border: 0;
   background: #F0F0F0;
   color: #2f2f2f;
-  font-size: 18px;
+  font-size: clamp(15px, 1.2vw, 18px);
 }
 
 .lead-magnet__form input::placeholder {
@@ -247,7 +259,7 @@ body {
   border: 0;
   background: #000000;
   color: #F4EED9;
-  font-size: 16px;
+  font-size: clamp(14px, 1vw, 16px);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -321,7 +333,7 @@ body {
 
 .cases {
   background: #5A332B;
-  padding: 80px 0;
+  padding: clamp(56px, 6vw, 80px) 0;
   overflow: hidden;
 }
 
@@ -342,7 +354,7 @@ body {
 
 .marquee span {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 70px;
+  font-size: clamp(32px, 5vw, 70px);
   font-weight: 300;
   margin-right: 100px;
   color: #F4EED9;
@@ -386,7 +398,9 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  padding: 80px;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 80px);
 }
 
 .about-left {
@@ -395,9 +409,14 @@ body {
 
 .about h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 60px;
+  font-size: clamp(36px, 4.4vw, 60px);
   font-weight: 300;
   margin-bottom: 30px;
+}
+
+.about-left p {
+  font-size: clamp(14px, 1.15vw, 17px);
+  line-height: 1.55;
 }
 
 .about-right {
