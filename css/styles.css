@@ -178,8 +178,8 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  overflow: hidden;
+  gap: 14px;
+  overflow: visible;
 }
 
 .product-case__video {
@@ -201,10 +201,10 @@ body {
   border: 0;
   background: #000000;
   color: #F4EED9;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   white-space: nowrap;
   cursor: pointer;
 }
