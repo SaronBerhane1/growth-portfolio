@@ -131,26 +131,30 @@ body {
 .product-case__content {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 18px 8px 0;
 }
 
 .product-case__card {
   background: #9FAEC0;
   color: #F4EED9;
-  width: min(640px, 100%);
-  padding: clamp(18px, 2.4vw, 28px) clamp(16px, 2vw, 24px) clamp(16px, 2vw, 22px);
+  width: min(560px, 100%);
+  padding: clamp(16px, 2vw, 22px) clamp(14px, 1.7vw, 20px) clamp(14px, 1.7vw, 20px);
+  height: auto;
+  min-height: 0;
+  align-self: flex-start;
 }
 
 .product-case__visual {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  width: min(380px, 30vw);
+  align-items: center;
+  width: min(340px, 26vw);
   flex: 0 0 auto;
+  align-self: center;
 }
 
 .phone-frame {
@@ -170,7 +174,7 @@ body {
 }
 
 .product-case__video-wrap {
-  width: min(320px, 100%);
+  width: min(280px, 100%);
   height: auto;
   display: flex;
   flex-direction: column;
@@ -179,13 +183,13 @@ body {
 
 .product-case__video {
   width: 100%;
-  aspect-ratio: 430 / 756;
+  aspect-ratio: 9 / 16;
   height: auto;
   object-fit: cover;
   object-position: center;
   display: block;
   border: 1px solid rgba(244, 238, 217, 0.3);
-  transform: scale(1.14);
+  transform: scale(1.08);
   transform-origin: center;
 }
 
