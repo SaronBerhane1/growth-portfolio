@@ -82,7 +82,7 @@
           <p class="lead-magnet__offer">Try the app for free - up to 10 rides.</p>
           <p class="lead-magnet__price">Regular price: 49 SEK.</p>
           <p class="lead-magnet__hint">Enter your email and i will send you the app link.</p>
-          <form class="lead-magnet__form">
+          <form class="lead-magnet__form" id="leadMagnetForm">
             <label class="sr-only" for="lead-email">Email address</label>
             <input id="lead-email" name="email" type="email" placeholder="your@email.com" required>
             <button
@@ -95,14 +95,20 @@
           </form>
         </div>
       </article>
-
-      <aside class="product-case__visual" aria-label="SL Påminnelse app preview">
-        <div class="phone-frame">
-          <img
-            class="phone-frame__image"
-            src="assets/sl-paminnelse-phone.png"
-            alt="SL Påminnelse app shown on a phone screen"
+      <aside class="product-case__visual" aria-label="Lead magnet demo video">
+        <div class="product-case__video-wrap">
+          <video class="product-case__video" id="leadMagnetVideo" muted playsinline preload="metadata">
+            <source src="assets/lead-magnet-demo.mp4" type="video/mp4">
+          </video>
+          <button
+            type="button"
+            class="product-case__video-play"
+            id="leadMagnetVideoPlay"
+            data-analytics-event="lead_video_play_click"
+            data-analytics-label="lead_magnet_video"
           >
+            Play to see how it works
+          </button>
         </div>
       </aside>
     </div>

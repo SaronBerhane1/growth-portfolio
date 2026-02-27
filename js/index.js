@@ -46,7 +46,7 @@
   };
 
   const setupLeadMagnetForm = () => {
-    const form = document.querySelector(".lead-magnet__form");
+    const form = document.getElementById("leadMagnetForm");
     if (!form) {
       return;
     }
@@ -112,10 +112,49 @@
     });
   };
 
+  const setupLeadMagnetVideoTracking = () => {
+    const video = document.getElementById("leadMagnetVideo");
+    const playButton = document.getElementById("leadMagnetVideoPlay");
+
+    if (!video || !playButton) {
+      return;
+    }
+
+    let hasSentComplete = false;
+
+    playButton.addEventListener("click", async () => {
+      try {
+        await video.play();
+        trackEvent("lead_video_start", {
+          section: "hero",
+          video_id: "leadMagnetVideo"
+        });
+      } catch (_error) {
+        trackEvent("lead_video_play_error", {
+          section: "hero",
+          video_id: "leadMagnetVideo"
+        });
+      }
+    });
+
+    video.addEventListener("ended", () => {
+      if (hasSentComplete) {
+        return;
+      }
+
+      hasSentComplete = true;
+      trackEvent("lead_video_complete", {
+        section: "hero",
+        video_id: "leadMagnetVideo"
+      });
+    });
+  };
+
   document.addEventListener("DOMContentLoaded", () => {
     updateFooterYear();
     setupClickTracking();
     setupLeadMagnetForm();
+    setupLeadMagnetVideoTracking();
 
     trackEvent("portfolio_page_ready", {
       page_title: document.title,
