@@ -190,6 +190,8 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 0;
   overflow: hidden;
   background: transparent;
@@ -470,6 +472,7 @@ body {
 
 .reports {
   background: #5A332B;
+  border-top: 1px solid #F4EED9;
   padding: clamp(44px, 6vw, 86px) clamp(18px, 4vw, 40px);
 }
 
