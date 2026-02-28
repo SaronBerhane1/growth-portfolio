@@ -115,25 +115,55 @@
   const setupLeadMagnetVideoTracking = () => {
     const video = document.getElementById("leadMagnetVideo");
     const playButton = document.getElementById("leadMagnetVideoPlay");
+    const videoWrap = video ? video.closest(".product-case__video-wrap") : null;
 
-    if (!video || !playButton) {
+    if (!video) {
       return;
     }
 
+    let hasSentStart = false;
     let hasSentComplete = false;
 
-    playButton.addEventListener("click", async () => {
-      try {
-        await video.play();
-        trackEvent("lead_video_start", {
-          section: "hero",
-          video_id: "leadMagnetVideo"
-        });
-      } catch (_error) {
-        trackEvent("lead_video_play_error", {
-          section: "hero",
-          video_id: "leadMagnetVideo"
-        });
+    const trackVideoStart = () => {
+      if (hasSentStart) {
+        return;
+      }
+      hasSentStart = true;
+      trackEvent("lead_video_start", {
+        section: "hero",
+        video_id: "leadMagnetVideo"
+      });
+    };
+
+    const setPlayingState = (isPlaying) => {
+      if (!videoWrap) {
+        return;
+      }
+      videoWrap.classList.toggle("is-playing", isPlaying);
+    };
+
+    if (playButton) {
+      playButton.addEventListener("click", async () => {
+        try {
+          await video.play();
+          setPlayingState(true);
+        } catch (_error) {
+          trackEvent("lead_video_play_error", {
+            section: "hero",
+            video_id: "leadMagnetVideo"
+          });
+        }
+      });
+    }
+
+    video.addEventListener("play", () => {
+      setPlayingState(true);
+      trackVideoStart();
+    });
+
+    video.addEventListener("pause", () => {
+      if (!video.ended) {
+        setPlayingState(false);
       }
     });
 
@@ -143,6 +173,7 @@
       }
 
       hasSentComplete = true;
+      setPlayingState(false);
       trackEvent("lead_video_complete", {
         section: "hero",
         video_id: "leadMagnetVideo"

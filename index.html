@@ -97,18 +97,24 @@
       </article>
       <aside class="product-case__visual" aria-label="Lead magnet demo video">
         <div class="product-case__video-wrap">
-          <video class="product-case__video" id="leadMagnetVideo" muted playsinline preload="metadata">
+          <video
+            class="product-case__video"
+            id="leadMagnetVideo"
+            muted
+            playsinline
+            preload="metadata"
+            poster="assets/sl-paminnelse-phone.png"
+          >
             <source src="assets/lead-magnet-demo.mp4" type="video/mp4">
           </video>
           <button
             type="button"
             class="product-case__video-play"
             id="leadMagnetVideoPlay"
+            aria-label="Play video"
             data-analytics-event="lead_video_play_click"
             data-analytics-label="lead_magnet_video"
-          >
-            Click here to see how it works
-          </button>
+          ></button>
         </div>
       </aside>
     </div>
