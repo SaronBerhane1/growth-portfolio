@@ -115,6 +115,7 @@
   const setupLeadMagnetVideoTracking = () => {
     const video = document.getElementById("leadMagnetVideo");
     const playButton = document.getElementById("leadMagnetVideoPlay");
+    const videoWrap = video ? video.closest(".product-case__video-wrap") : null;
 
     if (!video) {
       return;
@@ -134,11 +135,18 @@
       });
     };
 
+    const setPlayingState = (isPlaying) => {
+      if (!videoWrap) {
+        return;
+      }
+      videoWrap.classList.toggle("is-playing", isPlaying);
+    };
+
     if (playButton) {
       playButton.addEventListener("click", async () => {
         try {
           await video.play();
-          trackVideoStart();
+          setPlayingState(true);
         } catch (_error) {
           trackEvent("lead_video_play_error", {
             section: "hero",
@@ -146,9 +154,18 @@
           });
         }
       });
-    } else {
-      video.addEventListener("play", trackVideoStart);
     }
+
+    video.addEventListener("play", () => {
+      setPlayingState(true);
+      trackVideoStart();
+    });
+
+    video.addEventListener("pause", () => {
+      if (!video.ended) {
+        setPlayingState(false);
+      }
+    });
 
     video.addEventListener("ended", () => {
       if (hasSentComplete) {
@@ -156,6 +173,7 @@
       }
 
       hasSentComplete = true;
+      setPlayingState(false);
       trackEvent("lead_video_complete", {
         section: "hero",
         video_id: "leadMagnetVideo"
