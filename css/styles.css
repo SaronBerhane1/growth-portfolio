@@ -129,7 +129,8 @@ body {
 }
 
 .product-case__content {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 520px) minmax(0, 300px);
   justify-content: center;
   align-items: stretch;
   gap: clamp(16px, 2.2vw, 32px);
@@ -145,7 +146,7 @@ body {
   padding: clamp(14px, 1.4vw, 20px) clamp(12px, 1.3vw, 18px) clamp(14px, 1.4vw, 20px);
   height: auto;
   min-height: 0;
-  align-self: flex-start;
+  align-self: stretch;
 }
 
 .product-case__visual {
@@ -155,6 +156,16 @@ body {
   width: min(300px, 24vw);
   flex: 0 0 auto;
   align-self: stretch;
+}
+
+@media (min-width: 901px) {
+  .product-case__card {
+    transform: translateX(-1cm);
+  }
+
+  .product-case__visual {
+    transform: translateX(1cm);
+  }
 }
 
 .phone-frame {
@@ -174,8 +185,9 @@ body {
 }
 
 .product-case__video-wrap {
-  width: min(260px, 100%);
+  width: 100%;
   height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -629,6 +641,7 @@ footer {
   }
 
   .product-case__content {
+    display: flex;
     flex-direction: column;
     gap: 28px;
     align-items: stretch;
