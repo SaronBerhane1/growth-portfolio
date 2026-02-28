@@ -131,10 +131,10 @@ body {
 .product-case__content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: clamp(16px, 2.2vw, 32px);
   max-width: min(var(--page-max), 1040px);
-  margin: 0 auto;
+  margin: 1cm auto 0;
   padding: clamp(18px, 2vw, 30px) 8px 0;
 }
 
@@ -151,10 +151,10 @@ body {
 .product-case__visual {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: min(300px, 24vw);
   flex: 0 0 auto;
-  align-self: center;
+  align-self: stretch;
 }
 
 .phone-frame {
