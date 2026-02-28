@@ -524,8 +524,20 @@ body {
   color: #2f2f2f;
 }
 
-.reports__card-cta {
+.reports__card-image {
   margin-top: auto;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #dfe8f2;
+}
+
+.reports__card-cta {
+  margin-top: 14px;
   align-self: center;
   display: inline-block;
   padding: 0 18px;
