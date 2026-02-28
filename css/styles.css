@@ -202,9 +202,10 @@ body {
   height: 100%;
   min-height: 0;
   aspect-ratio: auto;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
+  background: #5A332B;
   border: 1px solid rgba(244, 238, 217, 0.3);
   transform: none;
   position: relative;
