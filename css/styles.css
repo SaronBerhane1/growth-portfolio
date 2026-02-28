@@ -528,12 +528,16 @@ body {
   margin-top: auto;
   align-self: center;
   display: inline-block;
-  padding: 9px 22px;
+  padding: 0 18px;
+  height: 44px;
+  line-height: 44px;
   background: #000000;
   color: #F4EED9;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
-  line-height: 0.9;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* ABOUT */
