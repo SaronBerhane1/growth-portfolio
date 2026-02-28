@@ -116,39 +116,26 @@
     const video = document.getElementById("leadMagnetVideo");
     const playButton = document.getElementById("leadMagnetVideoPlay");
 
-    if (!video) {
+    if (!video || !playButton) {
       return;
     }
 
-    let hasSentStart = false;
     let hasSentComplete = false;
 
-    const trackVideoStart = () => {
-      if (hasSentStart) {
-        return;
+    playButton.addEventListener("click", async () => {
+      try {
+        await video.play();
+        trackEvent("lead_video_start", {
+          section: "hero",
+          video_id: "leadMagnetVideo"
+        });
+      } catch (_error) {
+        trackEvent("lead_video_play_error", {
+          section: "hero",
+          video_id: "leadMagnetVideo"
+        });
       }
-      hasSentStart = true;
-      trackEvent("lead_video_start", {
-        section: "hero",
-        video_id: "leadMagnetVideo"
-      });
-    };
-
-    if (playButton) {
-      playButton.addEventListener("click", async () => {
-        try {
-          await video.play();
-          trackVideoStart();
-        } catch (_error) {
-          trackEvent("lead_video_play_error", {
-            section: "hero",
-            video_id: "leadMagnetVideo"
-          });
-        }
-      });
-    } else {
-      video.addEventListener("play", trackVideoStart);
-    }
+    });
 
     video.addEventListener("ended", () => {
       if (hasSentComplete) {
