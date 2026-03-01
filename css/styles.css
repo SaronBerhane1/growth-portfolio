@@ -146,7 +146,7 @@ body {
   padding: clamp(14px, 1.4vw, 20px) clamp(12px, 1.3vw, 18px) clamp(14px, 1.4vw, 20px);
   height: auto;
   min-height: 0;
-  align-self: stretch;
+  align-self: start;
 }
 
 .product-case__visual {
