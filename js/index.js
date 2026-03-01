@@ -181,11 +181,37 @@
     });
   };
 
+  const setupProductCaseHeightSync = () => {
+    const card = document.querySelector(".product-case__card");
+    const visual = document.querySelector(".product-case__visual");
+    if (!card || !visual) {
+      return;
+    }
+
+    const syncHeights = () => {
+      const isDesktop = window.matchMedia("(min-width: 901px)").matches;
+      if (!isDesktop) {
+        visual.style.height = "";
+        return;
+      }
+      visual.style.height = `${card.offsetHeight}px`;
+    };
+
+    syncHeights();
+    window.addEventListener("resize", syncHeights);
+
+    if ("ResizeObserver" in window) {
+      const resizeObserver = new ResizeObserver(syncHeights);
+      resizeObserver.observe(card);
+    }
+  };
+
   document.addEventListener("DOMContentLoaded", () => {
     updateFooterYear();
     setupClickTracking();
     setupLeadMagnetForm();
     setupLeadMagnetVideoTracking();
+    setupProductCaseHeightSync();
 
     trackEvent("portfolio_page_ready", {
       page_title: document.title,
